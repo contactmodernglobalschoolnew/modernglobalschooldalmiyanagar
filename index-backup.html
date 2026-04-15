@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modern Global School – Dalmianagar, Bihar</title>
+  <meta name="description" content="Modern Global School – A trusted co-educational school in Dalmianagar, Rohtas, Bihar. Quality education from Pre-Primary to Grade 8 since 2019." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            heading: ['Playfair Display', 'serif'],
+            body: ['DM Sans', 'sans-serif'],
+          },
+          colors: {
+            navy: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              200: '#c7d2fe',
+              400: '#818cf8',
+              600: '#1e3a8a',
+              700: '#1e3269',
+              800: '#162354',
+              900: '#0f1a3d',
+            },
+            gold: {
+              300: '#fcd34d',
+              400: '#fbbf24',
+              500: '#f59e0b',
+              600: '#d97706',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    * { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; }
+    h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
+    /* Navbar */
+    #navbar { transition: all 0.3s ease; }
+    #navbar.scrolled { background: rgba(15,26,61,0.97); box-shadow: 0 4px 30px rgba(0,0,0,0.3); }
+
+    /* Hero */
+    .hero-bg {
+      background: linear-gradient(135deg, #0f1a3d 0%, #1e3269 40%, #162354 70%, #0f1a3d 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-bg::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        radial-gradient(circle at 20% 30%, rgba(251,191,36,0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(99,102,241,0.1) 0%, transparent 50%);
+    }
+    .hero-grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .badge-pill {
+      background: linear-gradient(90deg, rgba(251,191,36,0.15), rgba(251,191,36,0.05));
+      border: 1px solid rgba(251,191,36,0.3);
+    }
+    .gold-line {
+      background: linear-gradient(90deg, #fbbf24, #f59e0b);
+    }
+
+    /* Section headings */
+    .section-tag {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-size: 0.72rem;
+    }
+
+    /* Cards */
+    .info-card {
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0 4px 24px rgba(15,26,61,0.08);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      border: 1px solid rgba(15,26,61,0.06);
+    }
+    .info-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(15,26,61,0.14);
+    }
+
+    /* Gallery */
+    .gallery-img {
+      overflow: hidden;
+      border-radius: 0.875rem;
+    }
+    .gallery-img img {
+      transition: transform 0.45s ease;
+    }
+    .gallery-img:hover img { transform: scale(1.06); }
+    .gallery-img .overlay {
+      opacity: 0; transition: opacity 0.3s ease;
+      background: linear-gradient(to top, rgba(15,26,61,0.75) 0%, transparent 60%);
+    }
+    .gallery-img:hover .overlay { opacity: 1; }
+
+    /* Facility icons */
+    .facility-icon {
+      width: 52px; height: 52px;
+      background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%);
+      border-radius: 0.75rem;
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    /* Animations */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up { animation: fadeUp 0.7s ease forwards; }
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.22s; }
+    .delay-3 { animation-delay: 0.36s; }
+    .delay-4 { animation-delay: 0.50s; }
+
+    /* Scroll reveal (JS-driven) */
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* Gradient text */
+    .text-gradient {
+      background: linear-gradient(90deg, #fbbf24, #f97316);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* CTA Button */
+    .btn-primary {
+      background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+      color: #0f1a3d;
+      font-weight: 700;
+      border-radius: 0.625rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(251,191,36,0.4); }
+    .btn-outline {
+      border: 2px solid rgba(255,255,255,0.4);
+      color: white;
+      font-weight: 600;
+      border-radius: 0.625rem;
+      transition: all 0.2s;
+    }
+    .btn-outline:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.7); }
+
+    /* Map placeholder */
+    .map-placeholder {
+      background: linear-gradient(135deg, #eef2ff, #e0e7ff);
+    }
+
+    /* Mobile menu */
+    #mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+    #mobile-menu.open { max-height: 400px; }
+
+    /* Stats bar */
+    .stat-bar {
+      background: linear-gradient(135deg, #1e3269, #162354);
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+<!-- ============================================================
+     NAVBAR
+============================================================ -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-navy-900/95 backdrop-blur-sm">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="flex items-center justify-between h-16 sm:h-18">
+
+      <!-- Logo -->
+      <a href="#home" class="flex items-center gap-2.5">
+        <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center flex-shrink-0">
+          <svg class="w-5 h-5 text-navy-900" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
+          </svg>
+        </div>
+        <div>
+          <div class="text-white font-heading font-bold text-base leading-tight">MGS</div>
+          <div class="text-gold-400 text-xs font-body font-medium leading-tight hidden sm:block">Modern Global School</div>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <div class="hidden md:flex items-center gap-6 text-sm font-body font-medium">
+        <a href="#about" class="text-gray-300 hover:text-gold-400 transition-colors">About</a>
+        <a href="#facilities" class="text-gray-300 hover:text-gold-400 transition-colors">Facilities</a>
+        <a href="#gallery" class="text-gray-300 hover:text-gold-400 transition-colors">Gallery</a>
+        <a href="#location" class="text-gray-300 hover:text-gold-400 transition-colors">Location</a>
+        <a href="#contact" class="text-gray-300 hover:text-gold-400 transition-colors">Contact</a>
+        <a href="#contact" class="btn-primary px-4 py-2 text-sm">Admission Enquiry</a>
+      </div>
+
+      <!-- Mobile hamburger -->
+      <button id="hamburger" class="md:hidden text-white p-2" aria-label="Toggle menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path id="ham-open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          <path id="ham-close" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden bg-navy-900 border-t border-white/10">
+      <div class="flex flex-col px-4 py-3 gap-3 font-body font-medium text-sm">
+        <a href="#about" class="text-gray-300 hover:text-gold-400 py-1.5 border-b border-white/5 transition-colors mobile-link">About</a>
+        <a href="#facilities" class="text-gray-300 hover:text-gold-400 py-1.5 border-b border-white/5 transition-colors mobile-link">Facilities</a>
+        <a href="#gallery" class="text-gray-300 hover:text-gold-400 py-1.5 border-b border-white/5 transition-colors mobile-link">Gallery</a>
+        <a href="#location" class="text-gray-300 hover:text-gold-400 py-1.5 border-b border-white/5 transition-colors mobile-link">Location</a>
+        <a href="#contact" class="text-gray-300 hover:text-gold-400 py-1.5 transition-colors mobile-link">Contact</a>
+        <a href="#contact" class="btn-primary px-4 py-2.5 text-center rounded-lg mt-1 mb-2">Admission Enquiry</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+<!-- ============================================================
+     HERO
+============================================================ -->
+<section id="home" class="hero-bg min-h-screen flex flex-col justify-center pt-20 pb-12 relative">
+  <div class="hero-grid"></div>
+
+  <!-- Decorative floating shapes -->
+  <div class="absolute top-24 right-8 w-48 h-48 rounded-full bg-indigo-600/10 blur-3xl pointer-events-none"></div>
+  <div class="absolute bottom-20 left-4 w-64 h-64 rounded-full bg-gold-400/6 blur-3xl pointer-events-none"></div>
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10 w-full">
+    <div class="max-w-2xl">
+
+      <!-- Badge -->
+      <div class="fade-up delay-1 inline-flex items-center gap-2 badge-pill rounded-full px-4 py-1.5 mb-6">
+        <span class="w-1.5 h-1.5 rounded-full bg-gold-400"></span>
+        <span class="text-gold-400 section-tag text-xs">Rohtas, Bihar • Est. 2019</span>
+      </div>
+
+      <!-- School Name -->
+      <h1 class="fade-up delay-2 font-heading font-extrabold text-white leading-tight mb-3"
+          style="font-size: clamp(2.4rem, 7vw, 4.5rem);">
+        Modern Global<br/>
+        <span class="text-gradient">School</span>
+      </h1>
+
+      <!-- Gold line -->
+      <div class="fade-up delay-2 gold-line h-1 w-20 rounded-full mb-5"></div>
+
+      <!-- Tagline -->
+      <p class="fade-up delay-3 text-gold-300/90 font-heading italic text-lg sm:text-xl mb-4">
+        "Shaping Young Minds Since 2019"
+      </p>
+
+      <!-- Description -->
+      <p class="fade-up delay-3 text-gray-300 font-body text-base sm:text-lg leading-relaxed mb-8 max-w-xl">
+        A trusted educational institution in Dalmianagar dedicated to nurturing knowledge, discipline, and creativity among young learners.
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="fade-up delay-4 flex flex-col sm:flex-row gap-3">
+        <a href="#contact" class="btn-primary px-7 py-3.5 text-center font-body text-sm sm:text-base flex items-center justify-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+          </svg>
+          Admission Enquiry
+        </a>
+        <a href="tel:07557799115" class="btn-outline px-7 py-3.5 text-center font-body text-sm sm:text-base flex items-center justify-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+          </svg>
+          Call School
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom wave -->
+  <div class="absolute bottom-0 left-0 right-0 overflow-hidden leading-none">
+    <svg viewBox="0 0 1200 60" preserveAspectRatio="none" class="w-full h-10 sm:h-14" fill="white">
+      <path d="M0,30 C300,70 900,-10 1200,30 L1200,60 L0,60 Z"/>
+    </svg>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     NUMBERS THAT SPEAK
+============================================================ -->
+<section class="stat-bar py-12 sm:py-16">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <!-- Section Header -->
+    <div class="text-center mb-10 reveal">
+      <span class="section-tag text-gold-400 block mb-3">Our Impact</span>
+      <h2 class="font-heading font-bold text-white mb-3" style="font-size: clamp(1.6rem, 4vw, 2.4rem);">Numbers That Speak</h2>
+      <div class="gold-line h-1 w-14 rounded-full mx-auto mb-4"></div>
+      <p class="text-gray-300 font-body text-sm sm:text-base max-w-2xl mx-auto">
+        Our commitment to excellence is reflected in the achievements and satisfaction of our school community.
+      </p>
+    </div>
+
+    <!-- Stats Grid -->
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+      <!-- Parents Satisfaction -->
+      <div class="reveal text-center">
+        <div class="bg-white/8 border border-white/15 rounded-2xl p-6 backdrop-blur-sm hover:bg-white/12 transition-all duration-300">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center">
+            <svg class="w-8 h-8 text-navy-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+            </svg>
+          </div>
+          <div class="font-heading font-bold text-4xl sm:text-5xl text-gold-400 mb-2">100%</div>
+          <div class="text-gray-300 text-sm font-body font-medium">Parents Satisfaction</div>
+        </div>
+      </div>
+
+      <!-- Student Improvement -->
+      <div class="reveal text-center">
+        <div class="bg-white/8 border border-white/15 rounded-2xl p-6 backdrop-blur-sm hover:bg-white/12 transition-all duration-300">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+            </svg>
+          </div>
+          <div class="font-heading font-bold text-4xl sm:text-5xl text-gold-400 mb-2">60%</div>
+          <div class="text-gray-300 text-sm font-body font-medium">Student Improvement<br/><span class="text-xs text-gray-400">in 1 Year</span></div>
+        </div>
+      </div>
+
+      <!-- Expert Teachers -->
+      <div class="reveal text-center">
+        <div class="bg-white/8 border border-white/15 rounded-2xl p-6 backdrop-blur-sm hover:bg-white/12 transition-all duration-300">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-indigo-400 to-indigo-600 flex items-center justify-center">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+            </svg>
+          </div>
+          <div class="font-heading font-bold text-4xl sm:text-5xl text-gold-400 mb-2">20+</div>
+          <div class="text-gray-300 text-sm font-body font-medium">Expert Teachers</div>
+        </div>
+      </div>
+
+      <!-- Awards & Recognition -->
+      <div class="reveal text-center">
+        <div class="bg-white/8 border border-white/15 rounded-2xl p-6 backdrop-blur-sm hover:bg-white/12 transition-all duration-300">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+            </svg>
+          </div>
+          <div class="font-heading font-bold text-4xl sm:text-5xl text-gold-400 mb-2">10+</div>
+          <div class="text-gray-300 text-sm font-body font-medium">Years<br/>Experience</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     ABOUT
+============================================================ -->
+<section id="about" class="py-16 sm:py-24 bg-white">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
+
+      <!-- Image side -->
+      <div class="reveal order-2 md:order-1">
+        <div class="relative">
+          <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=700&auto=format&fit=crop&q=80"
+               alt="School building" class="rounded-2xl shadow-2xl w-full object-cover h-72 sm:h-96" loading="lazy"/>
+          <!-- Floating badge -->
+          <div class="absolute -bottom-5 -right-3 sm:-right-6 bg-navy-800 text-white rounded-xl px-5 py-3 shadow-xl border border-white/10">
+            <div class="font-heading font-bold text-2xl text-gold-400">2019</div>
+            <div class="text-xs text-gray-400 font-body">Year Founded</div>
+          </div>
+          <!-- Top accent -->
+          <div class="absolute -top-4 -left-4 w-16 h-16 border-4 border-gold-400 rounded-xl opacity-40"></div>
+        </div>
+      </div>
+
+      <!-- Text side -->
+      <div class="reveal order-1 md:order-2">
+        <span class="section-tag text-gold-500 block mb-3">Our Story</span>
+        <h2 class="font-heading font-bold text-navy-800 mb-2" style="font-size: clamp(1.7rem, 4vw, 2.6rem);">
+          About Modern Global School
+        </h2>
+        <div class="gold-line h-1 w-14 rounded-full mb-6"></div>
+
+        <p class="text-gray-600 font-body text-base leading-relaxed mb-4">
+          Modern Global School (MGS) is a private educational institution established in <strong>2019</strong> in Dalmianagar, Rohtas district of Bihar. The school provides quality education from <strong>Grade 1 to Grade 8</strong> along with a pre-primary section.
+        </p>
+        <p class="text-gray-600 font-body text-base leading-relaxed mb-4">
+          The school follows <strong>Hindi as the medium of instruction</strong> and aims to provide a balanced learning environment that focuses on both academic excellence and overall personality development.
+        </p>
+        <p class="text-gray-600 font-body text-base leading-relaxed mb-8">
+          Located in an urban area and easily accessible by all-weather roads, the school has been serving the educational needs of the local community for many years.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="#contact" class="btn-primary px-6 py-3 text-center text-sm font-body">Enquire About Admission</a>
+          <a href="#facilities" class="border-2 border-navy-700 text-navy-700 font-body font-semibold px-6 py-3 rounded-lg hover:bg-navy-700 hover:text-white transition-all text-center text-sm">View Facilities</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SCHOOL DETAILS
+============================================================ -->
+<section id="details" class="py-14 sm:py-20 bg-navy-50" style="background: #f5f7ff;">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-12 reveal">
+      <span class="section-tag text-gold-500 block mb-2">Quick Overview</span>
+      <h2 class="font-heading font-bold text-navy-800 mb-3" style="font-size: clamp(1.6rem, 4vw, 2.4rem);">School at a Glance</h2>
+      <div class="gold-line h-1 w-14 rounded-full mx-auto"></div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
+      <!-- Card 1 -->
+      <div class="info-card p-5 reveal">
+        <div class="facility-icon mb-4">
+          <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+          </svg>
+        </div>
+        <div class="text-xs text-gray-400 font-body font-semibold uppercase tracking-wide mb-1">Established</div>
+        <div class="font-heading font-bold text-navy-800 text-xl">2019</div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="info-card p-5 reveal">
+        <div class="facility-icon mb-4">
+          <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+          </svg>
+        </div>
+        <div class="text-xs text-gray-400 font-body font-semibold uppercase tracking-wide mb-1">Grades Offered</div>
+        <div class="font-heading font-bold text-navy-800 text-xl">1 to 8</div>
+        <div class="text-xs text-gray-500 font-body mt-1">+ Pre-Primary Section</div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="info-card p-5 reveal">
+        <div class="facility-icon mb-4">
+          <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+          </svg>
+        </div>
+        <div class="text-xs text-gray-400 font-body font-semibold uppercase tracking-wide mb-1">School Type</div>
+        <div class="font-heading font-bold text-navy-800 text-xl">Co-Educational</div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="info-card p-5 reveal">
+        <div class="facility-icon mb-4">
+          <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/>
+          </svg>
+        </div>
+        <div class="text-xs text-gray-400 font-body font-semibold uppercase tracking-wide mb-1">Medium</div>
+        <div class="font-heading font-bold text-navy-800 text-xl">Hindi</div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="info-card p-5 reveal">
+        <div class="facility-icon mb-4">
+          <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+          </svg>
+        </div>
+        <div class="text-xs text-gray-400 font-body font-semibold uppercase tracking-wide mb-1">Session Starts</div>
+        <div class="font-heading font-bold text-navy-800 text-xl">April</div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="info-card p-5 reveal">
+        <div class="facility-icon mb-4">
+          <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+          </svg>
+        </div>
+        <div class="text-xs text-gray-400 font-body font-semibold uppercase tracking-wide mb-1">Location</div>
+        <div class="font-heading font-bold text-navy-800 text-base">Dalmianagar</div>
+        <div class="text-xs text-gray-500 font-body mt-1">Rohtas, Bihar</div>
+      </div>
+
+      <!-- Card 7 -->
+      <div class="info-card p-5 reveal">
+        <div class="facility-icon mb-4">
+          <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+          </svg>
+        </div>
+        <div class="text-xs text-gray-400 font-body font-semibold uppercase tracking-wide mb-1">Pre-Primary</div>
+        <div class="font-heading font-bold text-navy-800 text-xl">Available</div>
+      </div>
+
+      <!-- Card 8 -->
+      <div class="info-card p-5 reveal">
+        <div class="facility-icon mb-4">
+          <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+          </svg>
+        </div>
+        <div class="text-xs text-gray-400 font-body font-semibold uppercase tracking-wide mb-1">Institution Type</div>
+        <div class="font-heading font-bold text-navy-800 text-xl">Private</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     FACILITIES
+============================================================ -->
+<section id="facilities" class="py-16 sm:py-24 bg-white">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-12 reveal">
+      <span class="section-tag text-gold-500 block mb-2">Infrastructure & Resources</span>
+      <h2 class="font-heading font-bold text-navy-800 mb-3" style="font-size: clamp(1.6rem, 4vw, 2.4rem);">Our Facilities</h2>
+      <div class="gold-line h-1 w-14 rounded-full mx-auto mb-5"></div>
+      <p class="text-gray-500 font-body max-w-xl mx-auto text-sm sm:text-base">
+        The school focuses on providing a supportive environment for learning with essential facilities.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
+      <!-- Classrooms -->
+      <div class="info-card p-6 reveal">
+        <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+          </svg>
+        </div>
+        <h3 class="font-heading font-bold text-navy-800 text-lg mb-2">11 Classrooms</h3>
+        <p class="text-gray-500 font-body text-sm leading-relaxed">Well-maintained classrooms in good condition for effective learning.</p>
+      </div>
+
+      <!-- Computer Lab -->
+      <div class="info-card p-6 reveal">
+        <div class="w-12 h-12 rounded-xl bg-indigo-50 flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+          </svg>
+        </div>
+        <h3 class="font-heading font-bold text-navy-800 text-lg mb-2">Computer Lab</h3>
+        <p class="text-gray-500 font-body text-sm leading-relaxed">Computer-aided learning lab to prepare students for the digital world.</p>
+      </div>
+
+      <!-- Library -->
+      <div class="info-card p-6 reveal">
+        <div class="w-12 h-12 rounded-xl bg-emerald-50 flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+          </svg>
+        </div>
+        <h3 class="font-heading font-bold text-navy-800 text-lg mb-2">Library</h3>
+        <p class="text-gray-500 font-body text-sm leading-relaxed">Library stocked with 120+ books to encourage reading and research.</p>
+      </div>
+
+      <!-- Electricity -->
+      <div class="info-card p-6 reveal">
+        <div class="w-12 h-12 rounded-xl bg-yellow-50 flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+          </svg>
+        </div>
+        <h3 class="font-heading font-bold text-navy-800 text-lg mb-2">Electricity</h3>
+        <p class="text-gray-500 font-body text-sm leading-relaxed">Functional electricity connection ensuring a comfortable learning environment.</p>
+      </div>
+
+      <!-- Drinking Water -->
+      <div class="info-card p-6 reveal">
+        <div class="w-12 h-12 rounded-xl bg-cyan-50 flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 010 15 7.5 7.5 0 010-15z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3"/>
+          </svg>
+        </div>
+        <h3 class="font-heading font-bold text-navy-800 text-lg mb-2">Drinking Water</h3>
+        <p class="text-gray-500 font-body text-sm leading-relaxed">Clean drinking water available via hand pumps on campus.</p>
+      </div>
+
+      <!-- Toilets -->
+      <div class="info-card p-6 reveal">
+        <div class="w-12 h-12 rounded-xl bg-rose-50 flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-rose-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+          </svg>
+        </div>
+        <h3 class="font-heading font-bold text-navy-800 text-lg mb-2">Separate Toilets</h3>
+        <p class="text-gray-500 font-body text-sm leading-relaxed">Separate toilet facilities for boys and girls for safety and hygiene.</p>
+      </div>
+
+      <!-- Staff Room -->
+      <div class="info-card p-6 reveal">
+        <div class="w-12 h-12 rounded-xl bg-purple-50 flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
+          </svg>
+        </div>
+        <h3 class="font-heading font-bold text-navy-800 text-lg mb-2">Staff Room</h3>
+        <p class="text-gray-500 font-body text-sm leading-relaxed">Dedicated staff room for teachers and headmaster for effective administration.</p>
+      </div>
+
+      <!-- Computer for Learning -->
+      <div class="info-card p-6 reveal">
+        <div class="w-12 h-12 rounded-xl bg-orange-50 flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v10m0 0h10M9 13H5a2 2 0 00-2 2v4a2 2 0 002 2h4m6-6v6m0 0h4a2 2 0 002-2v-4a2 2 0 00-2-2h-4z"/>
+          </svg>
+        </div>
+        <h3 class="font-heading font-bold text-navy-800 text-lg mb-2">Digital Learning</h3>
+        <p class="text-gray-500 font-body text-sm leading-relaxed">Computers available for students to access digital educational content.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     CAMPUS
+============================================================ -->
+<section id="campus" class="py-14 sm:py-20" style="background: linear-gradient(135deg, #0f1a3d 0%, #1e3269 100%);">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center">
+    <div class="reveal">
+      <span class="section-tag text-gold-400 block mb-3">Our Campus</span>
+      <h2 class="font-heading font-bold text-white mb-3" style="font-size: clamp(1.6rem, 4vw, 2.4rem);">Campus Information</h2>
+      <div class="gold-line h-1 w-14 rounded-full mx-auto mb-8"></div>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="reveal bg-white/8 border border-white/15 rounded-2xl p-6 text-left backdrop-blur-sm">
+        <div class="text-gold-400 mb-3">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+          </svg>
+        </div>
+        <h3 class="font-heading font-bold text-white text-base mb-2">Rented Building</h3>
+        <p class="text-gray-400 font-body text-sm leading-relaxed">Operating from a well-maintained rented premises with dedicated teaching spaces.</p>
+      </div>
+      <div class="reveal bg-white/8 border border-white/15 rounded-2xl p-6 text-left backdrop-blur-sm">
+        <div class="text-gold-400 mb-3">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+          </svg>
+        </div>
+        <h3 class="font-heading font-bold text-white text-base mb-2">Partial Boundary</h3>
+        <p class="text-gray-400 font-body text-sm leading-relaxed">Campus is partially enclosed with boundary walls ensuring student safety.</p>
+      </div>
+      <div class="reveal bg-white/8 border border-white/15 rounded-2xl p-6 text-left backdrop-blur-sm">
+        <div class="text-gold-400 mb-3">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+          </svg>
+        </div>
+        <h3 class="font-heading font-bold text-white text-base mb-2">Safe Environment</h3>
+        <p class="text-gray-400 font-body text-sm leading-relaxed">A nurturing and safe learning environment for all young students.</p>
+      </div>
+      <div class="reveal bg-white/8 border border-white/15 rounded-2xl p-6 text-left backdrop-blur-sm">
+        <div class="text-gold-400 mb-3">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+          </svg>
+        </div>
+        <h3 class="font-heading font-bold text-white text-base mb-2">Dedicated Spaces</h3>
+        <p class="text-gray-400 font-body text-sm leading-relaxed">Well-organised classrooms and teaching spaces optimised for learning.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     GALLERY
+============================================================ -->
+<section id="gallery" class="py-16 sm:py-24 bg-white">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-12 reveal">
+      <span class="section-tag text-gold-500 block mb-2">Visual Tour</span>
+      <h2 class="font-heading font-bold text-navy-800 mb-3" style="font-size: clamp(1.6rem, 4vw, 2.4rem);">Photo Gallery</h2>
+      <div class="gold-line h-1 w-14 rounded-full mx-auto"></div>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
+
+      <!-- Large image 1 -->
+      <div class="gallery-img col-span-2 md:col-span-1 row-span-2 relative cursor-pointer" style="height: 320px; md:height: auto;">
+        <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600&auto=format&fit=crop&q=80"
+             alt="School Building" class="w-full h-full object-cover rounded-2xl" loading="lazy"/>
+        <div class="overlay absolute inset-0 rounded-2xl flex items-end p-4">
+          <span class="text-white font-body font-semibold text-sm">School Campus</span>
+        </div>
+      </div>
+
+      <div class="gallery-img relative cursor-pointer" style="height: 155px;">
+        <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=500&auto=format&fit=crop&q=80"
+             alt="Students in classroom" class="w-full h-full object-cover rounded-2xl" loading="lazy"/>
+        <div class="overlay absolute inset-0 rounded-2xl flex items-end p-3">
+          <span class="text-white font-body font-semibold text-xs">Classroom Learning</span>
+        </div>
+      </div>
+
+      <div class="gallery-img relative cursor-pointer" style="height: 155px;">
+        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=500&auto=format&fit=crop&q=80"
+             alt="Children studying" class="w-full h-full object-cover rounded-2xl" loading="lazy"/>
+        <div class="overlay absolute inset-0 rounded-2xl flex items-end p-3">
+          <span class="text-white font-body font-semibold text-xs">Happy Students</span>
+        </div>
+      </div>
+
+      <div class="gallery-img relative cursor-pointer" style="height: 155px;">
+        <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=500&auto=format&fit=crop&q=80"
+             alt="Library" class="w-full h-full object-cover rounded-2xl" loading="lazy"/>
+        <div class="overlay absolute inset-0 rounded-2xl flex items-end p-3">
+          <span class="text-white font-body font-semibold text-xs">Library</span>
+        </div>
+      </div>
+
+      <div class="gallery-img relative cursor-pointer" style="height: 155px;">
+        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=500&auto=format&fit=crop&q=80"
+             alt="Students learning" class="w-full h-full object-cover rounded-2xl" loading="lazy"/>
+        <div class="overlay absolute inset-0 rounded-2xl flex items-end p-3">
+          <span class="text-white font-body font-semibold text-xs">Group Study</span>
+        </div>
+      </div>
+
+      <div class="gallery-img relative cursor-pointer" style="height: 155px;">
+        <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?w=500&auto=format&fit=crop&q=80"
+             alt="School children" class="w-full h-full object-cover rounded-2xl" loading="lazy"/>
+        <div class="overlay absolute inset-0 rounded-2xl flex items-end p-3">
+          <span class="text-white font-body font-semibold text-xs">Young Learners</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     LOCATION
+============================================================ -->
+<section id="location" class="py-14 sm:py-20" style="background: #f5f7ff;">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-12 reveal">
+      <span class="section-tag text-gold-500 block mb-2">Find Us</span>
+      <h2 class="font-heading font-bold text-navy-800 mb-3" style="font-size: clamp(1.6rem, 4vw, 2.4rem);">Our Location</h2>
+      <div class="gold-line h-1 w-14 rounded-full mx-auto"></div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 items-start">
+
+      <!-- Address card -->
+      <div class="reveal">
+        <div class="info-card p-7">
+          <div class="flex items-start gap-4 mb-6">
+            <div class="w-12 h-12 rounded-xl bg-red-50 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-heading font-bold text-navy-800 text-lg mb-2">School Address</h3>
+              <p class="text-gray-600 font-body text-sm leading-relaxed">
+                Modern Global School<br/>
+                Opposite Machhli Market<br/>
+                Near New Gangauli<br/>
+                Dalmianagar, Dehri<br/>
+                Rohtas, Bihar, India
+              </p>
+            </div>
+          </div>
+
+          <div class="border-t border-gray-100 pt-6 space-y-3">
+            <div class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-indigo-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+              </svg>
+              <a href="tel:07557799115" class="text-gray-700 font-body font-medium hover:text-indigo-600 transition-colors">075577 99115</a>
+            </div>
+            <div class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-indigo-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              <span class="text-gray-600 font-body text-sm">Session starts in April</span>
+            </div>
+          </div>
+
+          <div class="mt-6 flex gap-3">
+            <a href="tel:07557799115" class="btn-primary flex-1 py-3 text-center text-sm font-body">Call Now</a>
+            <a href="https://maps.google.com?q=Modern+Global+School+Dalmianagar+Bihar" target="_blank"
+               class="flex-1 border-2 border-navy-700 text-navy-700 font-body font-semibold py-3 rounded-lg hover:bg-navy-700 hover:text-white transition-all text-center text-sm">
+              Open Maps
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Map embed -->
+      <div class="reveal">
+        <div class="rounded-2xl overflow-hidden shadow-xl border border-gray-200" style="height: 340px;">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.5!2d84.1872!3d24.9184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDU1JzA2LjIiTiA4NMKwMTEnMTMuOSJF!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Modern Global School Location Map">
+          </iframe>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     CONTACT
+============================================================ -->
+<section id="contact" class="py-16 sm:py-24 bg-white">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-12 reveal">
+      <span class="section-tag text-gold-500 block mb-2">Get In Touch</span>
+      <h2 class="font-heading font-bold text-navy-800 mb-3" style="font-size: clamp(1.6rem, 4vw, 2.4rem);">Contact School</h2>
+      <div class="gold-line h-1 w-14 rounded-full mx-auto mb-4"></div>
+      <p class="text-gray-500 font-body text-sm sm:text-base">Interested in admissions? Reach out to us today.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+
+      <!-- Contact Info -->
+      <div class="reveal space-y-5">
+        <div class="info-card p-6 flex items-center gap-5">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-gold-300 to-gold-500 flex items-center justify-center flex-shrink-0">
+            <svg class="w-7 h-7 text-navy-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="text-xs text-gray-400 font-body font-semibold uppercase tracking-wide mb-1">Phone</div>
+            <a href="tel:07557799115" class="font-heading font-bold text-navy-800 text-xl hover:text-indigo-600 transition-colors">075577 99115</a>
+          </div>
+        </div>
+
+        <div class="info-card p-6 flex items-center gap-5">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-100 to-indigo-200 flex items-center justify-center flex-shrink-0">
+            <svg class="w-7 h-7 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="text-xs text-gray-400 font-body font-semibold uppercase tracking-wide mb-1">Address</div>
+            <div class="font-body text-navy-800 text-sm leading-relaxed">Opp. Machhli Market, Near New Gangauli,<br/>Dalmianagar, Rohtas, Bihar</div>
+          </div>
+        </div>
+
+        <!-- Call button -->
+        <a href="tel:07557799115"
+           class="btn-primary w-full py-4 text-center font-body font-bold text-base flex items-center justify-center gap-2 rounded-xl">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+          </svg>
+          Call Now: 075577 99115
+        </a>
+      </div>
+
+      <!-- Enquiry Form -->
+      <div class="reveal">
+        <div class="info-card p-6 sm:p-8">
+          <h3 class="font-heading font-bold text-navy-800 text-xl mb-1">Send an Enquiry</h3>
+          <p class="text-gray-400 font-body text-sm mb-6">We'll get back to you shortly.</p>
+
+          <div id="form-success" class="hidden bg-emerald-50 border border-emerald-200 text-emerald-700 rounded-xl p-4 mb-5 text-sm font-body font-medium">
+            ✅ Thank you! Your enquiry has been sent. We'll contact you soon.
+          </div>
+
+          <div class="space-y-4">
+            <div>
+              <label class="block text-xs font-body font-semibold text-gray-500 uppercase tracking-wide mb-1.5">Your Name *</label>
+              <input id="contact-name" type="text" placeholder="Full name"
+                     class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm font-body focus:outline-none focus:ring-2 focus:ring-indigo-300 focus:border-indigo-300 transition-all bg-gray-50 focus:bg-white" />
+            </div>
+            <div>
+              <label class="block text-xs font-body font-semibold text-gray-500 uppercase tracking-wide mb-1.5">Phone Number *</label>
+              <input id="contact-phone" type="tel" placeholder="10-digit mobile number"
+                     class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm font-body focus:outline-none focus:ring-2 focus:ring-indigo-300 focus:border-indigo-300 transition-all bg-gray-50 focus:bg-white" />
+            </div>
+            <div>
+              <label class="block text-xs font-body font-semibold text-gray-500 uppercase tracking-wide mb-1.5">Message</label>
+              <textarea id="contact-message" rows="4" placeholder="Your enquiry (e.g. admission for Grade 3 in 2026)"
+                        class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm font-body focus:outline-none focus:ring-2 focus:ring-indigo-300 focus:border-indigo-300 transition-all bg-gray-50 focus:bg-white resize-none"></textarea>
+            </div>
+            <button id="submit-btn" onclick="submitForm()"
+                    class="btn-primary w-full py-3.5 text-sm font-body font-bold rounded-xl flex items-center justify-center gap-2">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+              </svg>
+              Send Enquiry
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer class="bg-navy-900 text-white pt-12 sm:pt-16 pb-6">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-10 pb-10 border-b border-white/10">
+
+      <!-- Brand -->
+      <div class="sm:col-span-2 md:col-span-1">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center">
+            <svg class="w-5 h-5 text-navy-900" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="font-heading font-bold text-white text-base">Modern Global School</div>
+            <div class="text-gold-400 text-xs font-body">Est. 2019</div>
+          </div>
+        </div>
+        <p class="text-gray-400 font-body text-sm leading-relaxed max-w-xs">
+          Shaping young minds in Dalmianagar, Rohtas, Bihar. Quality education from Pre-Primary to Grade 8.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h4 class="font-heading font-bold text-white text-base mb-4">Quick Links</h4>
+        <ul class="space-y-2.5">
+          <li><a href="#about" class="text-gray-400 hover:text-gold-400 transition-colors font-body text-sm">About School</a></li>
+          <li><a href="#details" class="text-gray-400 hover:text-gold-400 transition-colors font-body text-sm">School Details</a></li>
+          <li><a href="#facilities" class="text-gray-400 hover:text-gold-400 transition-colors font-body text-sm">Facilities</a></li>
+          <li><a href="#gallery" class="text-gray-400 hover:text-gold-400 transition-colors font-body text-sm">Photo Gallery</a></li>
+          <li><a href="#contact" class="text-gray-400 hover:text-gold-400 transition-colors font-body text-sm">Contact & Enquiry</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact in footer -->
+      <div>
+        <h4 class="font-heading font-bold text-white text-base mb-4">Contact</h4>
+        <div class="space-y-3">
+          <div class="flex items-start gap-3">
+            <svg class="w-4 h-4 text-gold-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+            <span class="text-gray-400 font-body text-sm leading-relaxed">Opp. Machhli Market, Near New Gangauli, Dalmianagar, Dehri, Rohtas, Bihar</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <svg class="w-4 h-4 text-gold-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+            </svg>
+            <a href="tel:07557799115" class="text-gray-400 hover:text-gold-400 transition-colors font-body text-sm">075577 99115</a>
+          </div>
+        </div>
+
+        <a href="#contact" class="inline-block mt-5 btn-primary px-5 py-2.5 text-sm font-body">Admission Enquiry</a>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-500 font-body">
+      <span>© 2026 Modern Global School. All rights reserved.</span>
+      <span>Dalmianagar, Rohtas, Bihar, India</span>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ============================================================
+     JAVASCRIPT
+============================================================ -->
+<script>
+  // Navbar scroll effect
+  window.addEventListener('scroll', () => {
+    const navbar = document.getElementById('navbar');
+    navbar.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // Hamburger menu
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const hamOpen = document.getElementById('ham-open');
+  const hamClose = document.getElementById('ham-close');
+  let menuOpen = false;
+
+  hamburger.addEventListener('click', () => {
+    menuOpen = !menuOpen;
+    mobileMenu.classList.toggle('open', menuOpen);
+    hamOpen.classList.toggle('hidden', menuOpen);
+    hamClose.classList.toggle('hidden', !menuOpen);
+  });
+
+  // Close mobile menu on link click
+  document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => {
+      menuOpen = false;
+      mobileMenu.classList.remove('open');
+      hamOpen.classList.remove('hidden');
+      hamClose.classList.add('hidden');
+    });
+  });
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  revealEls.forEach(el => observer.observe(el));
+
+  // Form submit
+  function submitForm() {
+    const name = document.getElementById('contact-name').value.trim();
+    const phone = document.getElementById('contact-phone').value.trim();
+
+    if (!name || !phone) {
+      alert('Please fill in your name and phone number.');
+      return;
+    }
+
+    const btn = document.getElementById('submit-btn');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+
+    setTimeout(() => {
+      document.getElementById('form-success').classList.remove('hidden');
+      document.getElementById('contact-name').value = '';
+      document.getElementById('contact-phone').value = '';
+      document.getElementById('contact-message').value = '';
+      btn.textContent = 'Send Enquiry';
+      btn.disabled = false;
+      btn.innerHTML = `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg> Send Enquiry`;
+    }, 1200);
+  }
+</script>
+</body>
+</html>
