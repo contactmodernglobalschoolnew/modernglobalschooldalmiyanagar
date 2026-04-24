@@ -18,7 +18,7 @@ const classrooms = [
   { img: "/latestimage/empty_kids_classroom2_modern_global_school_dalmiyanagar_dehri.jpeg", label: "Activity Room" },
   { img: "/latestimage/empty_kids_classroom_modern_global_school_dalmiyanagar_dehri.jpeg", label: "Senior Classroom" },
   { img: "/landingpageschoolimage/modern global school indoor classroom image best cbse school in dalmiyanagar.webp", label: "Smart Classroom" },
-  { img: "/latestimage/library.webp", label: "Library" },
+  { img: "/latestimage/library.jpg", label: "Library" },
   { img: "/latestimage/computerlab.jpg", label: "Computer Lab" }
 ];
 

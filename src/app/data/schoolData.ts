@@ -18,7 +18,7 @@ export const uspData = [
 
 export const facilitiesData = [
   { icon: "fas fa-laptop-code", name: "Smart Classrooms", desc: "Interactive boards & digital learning tools", img: "/latestimage/teacher_teaching_in_the_classroom_to_students_modern_global_school_dalmiyanagar_dehri.jpeg" },
-  { icon: "fas fa-book", name: "Library", desc: "Well-stocked library with books and reading area", img: "/latestimage/library.webp" },
+  { icon: "fas fa-book", name: "Library", desc: "Well-stocked library with books and reading area", img: "/latestimage/library.jpg" },
   { icon: "fas fa-desktop", name: "Computer Lab", desc: "Modern computer lab for digital literacy", img: "/latestimage/computerlab.jpg" },
   { icon: "fas fa-seedling", name: "Vibrant Environment", desc: "Beautiful and well-maintained school premises", img: "/latestimage/steps_premises_modern_global_school_dalmiyanagar_dehri.png" },
   { icon: "fas fa-users", name: "Staff Room", desc: "Dedicated space for teachers and staff collaboration", img: "/latestimage/staff_room_modern_global_school_dalmiyanagar_dehri.jpeg" },
@@ -109,7 +109,7 @@ export const galleryItems = [
   { cat: "Infrastructure", label: "School Beautiful Front", img: "/latestimage/school_beautiful_front_modern_global_school_dalmiyanagar_dehri.jpeg" },
   { cat: "Infrastructure", label: "School Front View", img: "/latestimage/school_beautiful_front2_modern_global_school_dalmiyanagar_dehri.jpeg" },
   { cat: "Infrastructure", label: "School Entrance", img: "/latestimage/school_entrance_modern_global_school_dalmiyanagar_dehri.jpeg" },
-  { cat: "Infrastructure", label: "School Library", img: "/latestimage/library.webp" },
+  { cat: "Infrastructure", label: "School Library", img: "/latestimage/library.jpg" },
   { cat: "Infrastructure", label: "Computer Lab", img: "/latestimage/computerlab.jpg" },
   { cat: "Infrastructure", label: "School Corridor", img: "/latestimage/corridor_premises_modern_global_school_dalmiyanagar_dehri.jpeg" },
   { cat: "Infrastructure", label: "Reception Counter", img: "/latestimage/reception_counter_modern_global_school_dalmiyanagar_dehri.jpeg" },
