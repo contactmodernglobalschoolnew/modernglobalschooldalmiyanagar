@@ -239,7 +239,7 @@ export const boardMembers = [
     quote: "We believe in nurturing minds with values and academic excellence."
   },
   {
-    name: "Shri Mithlesh Singha",
+    name: "Shri Mithlesh Sinha",
     designation: "Senior Advocate",
     image: "emoji://👤", 
     quote: "Quality education shapes the leaders of tomorrow."
@@ -276,7 +276,7 @@ export const testimonialsData = [
 
 // Teaching Community Data
 export const teachingCommunityData = {
-  groupImage: "/latestimage/director_sir_addressing_ptm_crowd_modern_global_school_dalmiyanagar_dehri.jpeg", // Using PTM image as placeholder for staff community
+  groupImage: "/latestimage/teaching_community_group_photo_modern_global_school_dalmiyanagar_dehri.jpeg",
   message: "Our dedicated team of 20+ experienced educators brings passion, expertise, and care to every classroom. Together, we create an environment where learning thrives, creativity flourishes, and every child discovers their unique potential. With diverse backgrounds and specialized training, our teaching community is committed to nurturing tomorrow's leaders with knowledge, values, and confidence."
 };
 
