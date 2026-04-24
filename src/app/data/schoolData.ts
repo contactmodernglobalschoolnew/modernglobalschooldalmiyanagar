@@ -241,7 +241,7 @@ export const boardMembers = [
   {
     name: "Shri Mithlesh Sinha",
     designation: "Senior Advocate",
-    image: "emoji://👤", 
+    image: "/latestimage/advocate_mithlesh_sinha_modern_global_school_dalmiyanagar_dehri.jpeg",
     quote: "Quality education shapes the leaders of tomorrow."
   }
 ];
