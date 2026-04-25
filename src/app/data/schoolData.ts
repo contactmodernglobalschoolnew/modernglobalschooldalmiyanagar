@@ -219,7 +219,7 @@ export const footerSEOKeywords = [
   "Quality Education Dehri on Sone",
   "Best School in Dehri",
   "Top School in Rohtas District",
-  "CBSE Affiliated School Dalmianagar",
+  "CBSE Curriculum School Dalmianagar",
   "Best Primary School Rohtas",
   "Top Education Dehri on Sone"
 ];
@@ -246,30 +246,33 @@ export const boardMembers = [
   }
 ];
 
+// Testimonials: Google Drive embeds (not bundled; loaded when section is in view)
+const drivePreview = (id: string) => `https://drive.google.com/file/d/${id}/preview`;
+
 // Testimonials Data
 export const testimonialsData = [
   {
     id: "happy-parent",
     title: "Happy Parent Testimonial",
-    videoSrc: "/videos/happy_parent_testimonial_about_school_modern_global_school_dalmiyanagar_dehri.mp4",
+    embedUrl: drivePreview("18xuNPmhuiA3-w2w1lHRpSY5VcWA6R2yV"),
     description: "A satisfied parent shares their experience about the school's quality education and caring environment."
   },
   {
     id: "student-voice", 
     title: "Student Testimonial",
-    videoSrc: "/videos/kid_talking_about_school_testimonial_modern_global_school_dalmiyanagar_dehri.mp4",
+    embedUrl: drivePreview("1vk8l2Rgqyz90lwRZXxO18pK1gmOKkAvV"),
     description: "Our student talks about their learning experience and school life at Modern Global School."
   },
   {
     id: "parent-student",
     title: "Parent & Student Together",
-    videoSrc: "/videos/parent_testimonial_with_kid_student_modern_global_school_dalmiyanagar_dehri.mp4", 
+    embedUrl: drivePreview("1KZzMsbO7yw1wPNid5sUD0KIE8dpepDX-"),
     description: "A parent and student share their positive experiences and growth at our school."
   },
   {
     id: "topper-parent",
     title: "Topper's Parent Testimonial", 
-    videoSrc: "/videos/parent_testimonial_with_topper_student_modern_global_school_dalmiyanagar_dehri.mp4",
+    embedUrl: drivePreview("1alFnGAad_43skXK-z6TJi9nCp7COw8w7"),
     description: "Parents of our top-performing student share their journey and success story."
   }
 ];

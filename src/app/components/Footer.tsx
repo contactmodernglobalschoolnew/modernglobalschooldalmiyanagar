@@ -14,7 +14,7 @@ export default function Footer() {
             </div>
             <div>
               <div className="font-bold text-white text-sm leading-tight">Modern Global School</div>
-              <div className="text-[11px] text-cyan-300">CBSE Affiliated</div>
+              <div className="text-[11px] text-cyan-300">CBSE Curriculum</div>
             </div>
           </div>
           <p className="text-sm text-gray-400 leading-relaxed mb-5">

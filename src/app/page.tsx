@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import AOS from 'aos';
@@ -18,12 +18,30 @@ export default function Home() {
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [formSent, setFormSent] = useState(false);
   const [enquiryOpen, setEnquiryOpen] = useState(false);
+  const testimonialsRef = useRef<HTMLElement | null>(null);
+  const [testimonialsInView, setTestimonialsInView] = useState(false);
 
   useEffect(() => {
     AOS.init({ duration: 700, once: true, offset: 60 });
     const onScroll = () => setShowScrollTop(window.scrollY > 400);
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  useEffect(() => {
+    const el = testimonialsRef.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setTestimonialsInView(true);
+          obs.disconnect();
+        }
+      },
+      { rootMargin: "200px 0px", threshold: 0.01 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
   }, []);
 
   return (
@@ -328,7 +346,7 @@ export default function Home() {
       </section>
 
       {/* ── TESTIMONIALS ─────────────────────────────────────── */}
-      <section className="py-20 bg-gradient-to-br from-[#FFF4ED] to-[#FED7AA]">
+      <section ref={testimonialsRef} className="py-20 bg-gradient-to-br from-[#FFF4ED] to-[#FED7AA]">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12" data-aos="fade-up">
             <span className="text-[#FF6B35] font-bold text-sm uppercase tracking-widest">Testimonials</span>
@@ -340,16 +358,23 @@ export default function Home() {
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {testimonialsData.map(({ id, title, videoSrc, description }, i) => (
+            {testimonialsData.map(({ id, title, embedUrl, description }, i) => (
               <div key={id} className="bg-white rounded-3xl p-4 shadow-lg border border-orange-200 card-hover" data-aos="fade-up" data-aos-delay={i * 100}>
                 <div className="aspect-[9/16] rounded-2xl overflow-hidden mb-4 bg-gray-100">
-                  <video 
-                    controls 
-                    className="w-full h-full object-cover"
-                  >
-                    <source src={videoSrc} type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
+                  {testimonialsInView ? (
+                    <iframe
+                      title={title}
+                      src={embedUrl}
+                      className="h-full w-full border-0"
+                      allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+                      allowFullScreen
+                      loading="lazy"
+                    />
+                  ) : (
+                    <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200">
+                      <i className="fas fa-play-circle text-4xl text-gray-400" aria-hidden />
+                    </div>
+                  )}
                 </div>
                 <h3 className="font-bold text-[#7C3AED] text-base mb-2" style={{ fontFamily: 'var(--font-playfair-display), serif' }}>
                   {title}
