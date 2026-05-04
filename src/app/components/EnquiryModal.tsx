@@ -24,9 +24,26 @@ export default function EnquiryModal({ open, onClose }: Props) {
 
   if (!open) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSent(true);
+  
+    try {
+      const formData = new FormData();
+      formData.append("name", form.name);
+      formData.append("phone", form.phone);
+      formData.append("purpose", form.purpose);
+      formData.append("message", form.message);
+  
+      const res = await fetch("https://script.google.com/macros/s/AKfycbz0GxESn5cwf5K1LDLnYaENkRlENKDKJrQNRdjU62yy_w9xYrE6XTjEw45HofBD48WrPA/exec", {
+        method: "POST",
+        body: formData,
+      });
+  
+      setSent(true);
+    } catch (error) {
+      console.error(error);
+      alert("Error submitting form");
+    }
   };
 
   return (

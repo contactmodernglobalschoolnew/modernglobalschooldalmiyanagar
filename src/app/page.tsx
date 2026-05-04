@@ -85,22 +85,41 @@ export default function Home() {
         </a>
       </section>
 
-      {/* ── STATS ───────────────────────────────────────────── */}
-      <section className="bg-white py-12 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-4">
-          {statsData.map(({ num, label, icon, color, bg }) => (
-            <div key={label} className="flex items-center gap-4 p-5 rounded-2xl card-hover" style={{ background: bg }} data-aos="fade-up">
-              <div className="w-14 h-14 rounded-xl flex items-center justify-center text-xl shrink-0" style={{ background: color + '20' }}>
-                <i className={icon} style={{ color }} />
-              </div>
-              <div>
-                <div className="text-3xl font-black" style={{ color }}>{num}</div>
-                <div className="text-xs text-gray-600 font-medium leading-tight">{label}</div>
-              </div>
-            </div>
-          ))}
+      <section className="bg-white py-8 shadow-sm">
+  <div className="max-w-6xl mx-auto px-3 
+                  grid grid-cols-2 sm:grid-cols-4 
+                  gap-3">
+
+    {statsData.map(({ num, label, icon, color, bg }) => (
+      <div
+        key={label}
+        className="flex items-center gap-2 sm:gap-3 
+                   p-2.5 sm:p-3 
+                   rounded-xl 
+                   animate-bounce-slow"
+        style={{ background: bg }}
+        data-aos="fade-up"
+      >
+        <div
+          className="w-8 h-8 sm:w-10 sm:h-10 
+                     rounded-lg flex items-center justify-center shrink-0"
+          style={{ background: color + '20' }}
+        >
+          <i className={`${icon} text-xs sm:text-sm`} style={{ color }} />
         </div>
-      </section>
+
+        <div>
+          <div className="text-sm sm:text-lg font-bold" style={{ color }}>
+            {num}
+          </div>
+          <div className="text-[10px] sm:text-xs text-gray-600 leading-tight">
+            {label}
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
 
       {/* ── ABOUT US ─────────────────────────────────────────── */}
       <section id="about" className="py-20 bg-gradient-to-br from-[#F3E8FF] to-[#EDE9FE]">

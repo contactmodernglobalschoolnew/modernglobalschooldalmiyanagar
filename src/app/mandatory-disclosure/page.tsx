@@ -4,16 +4,45 @@ import Footer from '../components/Footer';
 import { disclosureData } from '../data/schoolData';
 
 const cbseDocuments = [
-  { icon: "fas fa-file-certificate", title: "Affiliation Certificate", desc: "CBSE Affiliation certificate issued by the board", link: "#" },
-  { icon: "fas fa-id-card", title: "School Recognition Certificate", desc: "State government recognition certificate", link: "#" },
-  { icon: "fas fa-map-marked", title: "Land Certificate / NOC", desc: "Land ownership and NOC documents", link: "#" },
-  { icon: "fas fa-fire-extinguisher", title: "Fire Safety Certificate", desc: "Valid fire safety compliance certificate", link: "#" },
-  { icon: "fas fa-building", title: "Building Safety Certificate", desc: "Structural safety certificate from civil engineer", link: "#" },
-  { icon: "fas fa-hands-wash", title: "Health & Sanitation Certificate", desc: "Health and hygiene compliance certificate", link: "#" },
-  { icon: "fas fa-users", title: "SMC Committee Details", desc: "School Management Committee composition and records", link: "#" },
-  { icon: "fas fa-chalkboard-teacher", title: "Staff Details", desc: "Teaching and non-teaching staff qualification details", link: "#" },
-  { icon: "fas fa-rupee-sign", title: "Fee Structure", desc: "Complete fee structure for all classes", link: "#" },
-  { icon: "fas fa-calendar-alt", title: "Academic Calendar", desc: "Annual academic calendar and exam schedule", link: "#" }
+  {
+    icon: "fas fa-file-alt",
+    title: "Trust Certificate",
+    desc: "Legal trust registration certificate of the school",
+    link: "/docs/trust-certificate.pdf",
+    download: true
+  },
+  {
+    icon: "fas fa-file-alt",
+    title: "NOC Certificate",
+    desc: "No Objection Certificate issued by authorities",
+    link: "/docs/noc-certificate.pdf",
+    download: true
+  },
+  {
+    icon: "fas fa-file-alt",
+    title: "School Recognition Certificate",
+    desc: "Official recognition certificate of the school",
+    link: "/docs/school-recognition.pdf",
+    download: true
+  },
+  {
+    icon: "fas fa-map-marked",
+    title: "Land Certificate",
+    desc: "Land ownership and related documents",
+    link: "#"
+  },
+  {
+    icon: "fas fa-rupee-sign",
+    title: "Fee Structure",
+    desc: "Complete fee structure for all classes",
+    link: "#"
+  },
+  {
+    icon: "fas fa-calendar-alt",
+    title: "Academic Calendar",
+    desc: "Annual academic calendar and exam schedule",
+    link: "#"
+  }
 ];
 
 export default function MandatoryDisclosurePage() {
@@ -67,16 +96,25 @@ export default function MandatoryDisclosurePage() {
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-            {cbseDocuments.map(({ icon, title, desc }) => (
-              <div key={title} className="bg-white rounded-2xl p-5 shadow-sm border border-blue-50 card-hover">
+          {cbseDocuments.map(({ icon, title, desc, link, download }) => (              <div key={title} className="bg-white rounded-2xl p-5 shadow-sm border border-blue-50 card-hover">
                 <div className="w-12 h-12 rounded-xl bg-[#EFF6FF] flex items-center justify-center text-[#1D4ED8] mb-4">
                   <i className={icon} />
                 </div>
                 <h3 className="font-bold text-gray-800 text-sm mb-1">{title}</h3>
                 <p className="text-xs text-gray-500 leading-relaxed mb-4">{desc}</p>
-                <span className="inline-flex items-center gap-1.5 text-xs text-[#1D4ED8] font-semibold border border-[#1D4ED8]/30 px-3 py-1.5 rounded-full">
-                  <i className="fas fa-file-pdf" /> Available on Request
-                </span>
+                {download ? (
+  <a
+    href={link}
+    download
+    className="inline-flex items-center gap-1.5 text-xs text-white bg-[#1D4ED8] px-3 py-1.5 rounded-full hover:bg-[#1E40AF] transition"
+  >
+    <i className="fas fa-download" /> Download
+  </a>
+) : (
+  <span className="inline-flex items-center gap-1.5 text-xs text-[#1D4ED8] font-semibold border border-[#1D4ED8]/30 px-3 py-1.5 rounded-full">
+    <i className="fas fa-file-pdf" /> Available on Request
+  </span>
+)}
               </div>
             ))}
           </div>

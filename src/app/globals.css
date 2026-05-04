@@ -211,3 +211,15 @@ footer p, footer div, footer span, footer a { font-size: 1rem !important; }
 /* Animate on scroll via data-aos placeholders */
 @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+
+
+
+@keyframes bounceSoft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-bounce-slow {
+  animation: bounceSoft 2.5s infinite ease-in-out;
+}

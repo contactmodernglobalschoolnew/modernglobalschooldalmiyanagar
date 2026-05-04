@@ -127,19 +127,19 @@ export const galleryItems = [
 export const disclosureData = [
   { label: "School Name", value: "Modern Global School" },
   { label: "Curriculum Board", value: "CBSE Curriculum (Based on Central Board of Secondary Education)" },
-  { label: "CBSE Code", value: "XXXXXXXXXX" },
-  { label: "School Code", value: "XXXXXX" },
+  // ❌ Removed CBSE Code
+  { label: "Recognition No.", value: "2341473202487114643" }, // ✅ Added
   { label: "Address", value: "Dalmianagar, Rohtas, Bihar 821305" },
   { label: "Principal Name", value: "Mrs. Kumkum Agarwal" },
   { label: "Contact Number", value: "+91-09798560695" },
   { label: "Email", value: "info@modernglobalschool.in" },
   { label: "Classes Offered", value: "Nursery to Class VIII" },
   { label: "School Type", value: "Co-Educational, English Medium" },
-  { label: "Land Area", value: "[Area in sq. meters]" },
+  { label: "Land Area", value: "2000 sq. meters" }, // ✅ Updated
   { label: "Building Type", value: "Pucca (Own Building)" },
-  { label: "No. of Classrooms", value: "[XX Classrooms]" },
-  { label: "No. of Toilets (Boys)", value: "[XX]" },
-  { label: "No. of Toilets (Girls)", value: "[XX]" },
+  { label: "No. of Classrooms", value: "15" }, // ✅ Updated
+  { label: "No. of Toilets (Boys)", value: "2" }, // ✅ Updated
+  { label: "No. of Toilets (Girls)", value: "2" }, // ✅ Updated
   { label: "Drinking Water", value: "RO Purified Water Available" }
 ];
 
