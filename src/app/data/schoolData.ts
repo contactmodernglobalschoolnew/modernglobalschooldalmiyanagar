@@ -16,6 +16,21 @@ export const uspData = [
   { icon: "fas fa-hands-helping", title: "Experienced Faculty", desc: "Highly qualified and trained teachers committed to excellence and student welfare.", color: "#0891B2" }
 ];
 
+export const dresscodeData = [
+  {
+    label: "Mon – Thu",
+    text: "Boys & Girls: Blue check half-sleeve shirt, Blue pant/tunic, Tie & belt, Black shoes, Blue socks"
+  },
+  {
+    label: "Fri – Sat",
+    text: "Boys & Girls: Black trousers, House dress T-shirt, White shoes, White socks"
+  },
+  {
+    label: "Winter",
+    text: "Blue sweater (full-sleeve V-shaped neck) & Blazer over regular uniform"
+  }
+];
+
 export const facilitiesData = [
   { icon: "fas fa-laptop-code", name: "Smart Classrooms", desc: "Interactive boards & digital learning tools", img: "/latestimage/teacher_teaching_in_the_classroom_to_students_modern_global_school_dalmiyanagar_dehri.jpeg" },
   { icon: "fas fa-book", name: "Library", desc: "Well-stocked library with books and reading area", img: "/latestimage/library.jpg" },
