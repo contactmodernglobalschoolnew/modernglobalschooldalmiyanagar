@@ -5,6 +5,14 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import EnquiryModal from './EnquiryModal';
 
+const TICKER_ITEMS = [
+  "🎉 Admissions Open 2026–27 — Enroll Now!",
+  "📢 Annual Sports Day 2026 — Stay Tuned!",
+  "🏆 100% Result in Board Exams — Proud Moment!",
+  "📚 New Digital Smart Classes Now Available",
+  "📞 Call +91-09798560695 for Admission Enquiry",
+];
+
 const links = [
   { l: "Home", h: "/#home" },
   { l: "Academics", h: "/academics" },
@@ -40,16 +48,18 @@ export default function Navbar() {
   return (
     <>
       {/* Ticker */}
-      <div className="bg-[#FF6B35] text-white text-xs py-1.5 overflow-hidden">
-        <div className="ticker whitespace-nowrap flex gap-16">
-          <span>🎉 Admissions Open 2026–27 — Enroll Now!</span>
-          <span>📢 Annual Sports Day 2026 — Stay Tuned!</span>
-          <span>🏆 100% Result in Board Exams — Proud Moment!</span>
-          <span>📚 New Digital Smart Classes Now Available</span>
-          <span>📞 Call +91-09798560695 for Admission Enquiry</span>
-          <span>🎉 Admissions Open 2026–27 — Enroll Now!</span>
-          <span>📢 Annual Sports Day 2026 — Stay Tuned!</span>
-          <span>🏆 100% Result in Board Exams — Proud Moment!</span>
+      <div className="bg-[#FF6B35] text-white text-xs py-1.5 overflow-hidden min-w-0">
+        <div className="ticker-track">
+          <div className="flex shrink-0 gap-16 pr-16">
+            {TICKER_ITEMS.map((text, i) => (
+              <span key={`t1-${i}`} className="whitespace-nowrap">{text}</span>
+            ))}
+          </div>
+          <div className="flex shrink-0 gap-16 pr-16" aria-hidden>
+            {TICKER_ITEMS.map((text, i) => (
+              <span key={`t2-${i}`} className="whitespace-nowrap">{text}</span>
+            ))}
+          </div>
         </div>
       </div>
 
