@@ -41,13 +41,7 @@ export const noticesData = [
   { date: "01 Apr 2026", badge: "Admission", title: "Admissions Open for 2026–27", text: "Admissions are now open for Nursery to Class VIII for the academic session 2026–27. Visit the office to collect the form.", color: "#16A34A", badgeBg: "#F0FDF4", badgeColor: "#16A34A" }
 ];
 
-export const dresscodeData = [
-  { label: "Boys", text: "White shirt, Navy blue trousers, black shoes, school tie & belt" },
-  { label: "Girls", text: "White shirt, Navy blue skirt/salwar, black shoes, school ribbon" },
-  { label: "Winter", text: "Navy blue school blazer/sweater with white inner shirt" },
-  { label: "P.E. Day", text: "White T-shirt with school logo, track pants, white sports shoes" },
-  { label: "Note", text: "School ID card must be worn every day without fail" }
-];
+
 
 export const timingData = [
   { label: "Mon – Fri", time: "7:30 AM – 2:00 PM" },
@@ -279,7 +273,7 @@ export const testimonialsData = [
 
 // Teaching Community Data
 export const teachingCommunityData = {
-  groupImage: "/latestimage/teaching_community_group_photo_modern_global_school_dalmiyanagar_dehri.jpeg",
+  groupImage: "/latestimage/teaching_community_group_photo_modern_global_school_dalmiyanagar_dehri.webp",
   message: "Our dedicated team of 20+ experienced educators brings passion, expertise, and care to every classroom. Together, we create an environment where learning thrives, creativity flourishes, and every child discovers their unique potential. With diverse backgrounds and specialized training, our teaching community is committed to nurturing tomorrow's leaders with knowledge, values, and confidence."
 };
 

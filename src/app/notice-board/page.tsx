@@ -2,7 +2,28 @@
 import { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { noticesData } from '../data/schoolData';
+
+
+import {
+  statsData, uspData, facilitiesData, noticesData,
+  admissionSteps, docs, contactInfo, timingData, boardMembers, testimonialsData,
+  teachingCommunityData
+} from '../data/schoolData';
+
+const dressCodeItems = [
+  {
+    label: "Mon – Thu",
+    text: "Boys & Girls: Blue check half-sleeve shirt, Blue pant/tunic, Tie & belt, Black shoes, Blue socks"
+  },
+  {
+    label: "Fri – Sat",
+    text: "Boys & Girls: Black trousers, House dress T-shirt, White shoes, White socks"
+  },
+  {
+    label: "Winter",
+    text: "Blue sweater (full-sleeve V-shaped neck) & Blazer over regular uniform"
+  }
+];
 
 const filters = ["All", "Exam", "Event", "Admission", "Holiday", "Result"];
 
@@ -85,6 +106,50 @@ export default function NoticeBoardPage() {
               ))}
             </div>
           )}
+        </div>
+      </section>
+
+      
+      {/* ── SCHOOL TIMING + DRESSCODE ───────────────────────── */}
+      <section className="py-20 bg-gradient-to-br from-[#FAF5FF] to-[#F3E8FF]">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-12" data-aos="fade-up">
+            <span className="text-[#A855F7] font-bold text-sm uppercase tracking-widest">School Schedule</span>
+            <h2 className="text-3xl font-black text-[#7C3AED] mt-2 section-line center" style={{ fontFamily: 'var(--font-playfair-display), serif' }}>
+              Timings & Dress Code
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Timing */}
+            <div className="bg-white rounded-3xl p-7 shadow-sm border border-gray-100" data-aos="fade-right">
+              <h3 className="font-bold text-[#7C3AED] text-lg mb-5 flex items-center gap-2">
+                <i className="fas fa-clock text-[#06B6D4]" /> School Timings
+              </h3>
+              <div className="space-y-3">
+                {timingData.map(({ label, time }) => (
+                  <div key={label} className="flex justify-between items-center py-2.5 border-b border-gray-50 last:border-0">
+                    <span className="text-sm font-medium text-gray-700">{label}</span>
+                    <span className="text-sm font-bold text-[#8B5CF6] bg-[#F3E8FF] px-3 py-1 rounded-full">{time}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            {/* Dress Code */}
+            <div className="bg-white rounded-3xl p-7 shadow-sm border border-gray-100" data-aos="fade-left">
+              <h3 className="font-bold text-[#7C3AED] text-lg mb-5 flex items-center gap-2">
+                <i className="fas fa-tshirt text-[#FF6B35]" /> Dress Code
+              </h3>
+              
+              <div className="space-y-4">
+                {dressCodeItems.map(({ label, text }) => (
+                  <div key={label} className="flex gap-4 items-start">
+                    <span className="shrink-0 bg-[#FFF4ED] text-[#FF6B35] font-bold text-xs px-3 py-1.5 rounded-full border border-orange-200">{label}</span>
+                    <p className="text-sm text-gray-600 leading-relaxed">{text}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

@@ -9,10 +9,10 @@ import Footer from './components/Footer';
 import EnquiryModal from './components/EnquiryModal';
 import {
   statsData, uspData, facilitiesData, noticesData,
-  admissionSteps, docs, contactInfo, galleryItems,
-  dresscodeData, timingData, boardMembers, testimonialsData,
+  admissionSteps, docs, contactInfo, timingData, boardMembers, testimonialsData,
   teachingCommunityData
 } from './data/schoolData';
+
 
 export default function Home() {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -267,10 +267,7 @@ export default function Home() {
             </div>
             <div className="grid grid-cols-2 gap-4" data-aos="fade-left">
               {[
-                { src: "/latestimage/teacher_teaching_in_the_classroom_to_students_modern_global_school_dalmiyanagar_dehri.jpeg", label: "Smart Teaching", span: "col-span-2 h-48" },
-                { src: "/latestimage/empty_junior_classroom_modern_global_school_dalmiyanagar.jpeg", label: "Junior Classroom", span: "h-36" },
-                { src: "/latestimage/empty_senior_classroom_modern_global_school_dalmiyanagar.jpeg", label: "Senior Classroom", span: "h-36" },
-                { src: "/latestimage/teacher_teaching_in_the_classroom_to_senior_students_modern_global_school_dalmiyanagar_dehri.jpeg", label: "Senior Learning", span: "h-36" }
+                { src: "/latestimage/teacher_teaching_in_the_classroom_to_students_modern_global_school_dalmiyanagar_dehri.jpeg", label: "Smart Teaching", span: "col-span-2 h-48" }
               ].map(({ src, label, span }, i) => (
                 <div key={label} className={`rounded-2xl overflow-hidden shadow-md ${span}`}>
                   <Image src={src} alt={label} width={400} height={250} className="w-full h-full object-cover" />
@@ -376,10 +373,15 @@ export default function Home() {
               Hear from our parents and students about their experiences at Modern Global School
             </p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="-mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 sm:mx-0 sm:grid sm:snap-none sm:overflow-visible sm:px-0 sm:pb-0 sm:grid-cols-2 lg:grid-cols-4 sm:gap-6">
             {testimonialsData.map(({ id, title, embedUrl, description }, i) => (
-              <div key={id} className="bg-white rounded-3xl p-4 shadow-lg border border-orange-200 card-hover" data-aos="fade-up" data-aos-delay={i * 100}>
-                <div className="aspect-[9/16] rounded-2xl overflow-hidden mb-4 bg-gray-100">
+              <div
+                key={id}
+                className="w-[240px] shrink-0 snap-start bg-white rounded-2xl p-3 shadow-lg border border-orange-200 card-hover sm:w-auto sm:shrink sm:rounded-3xl sm:p-4"
+                data-aos="fade-up"
+                data-aos-delay={i * 100}
+              >
+                <div className="aspect-[9/16] rounded-xl overflow-hidden mb-3 bg-gray-100 sm:rounded-2xl sm:mb-4">
                   {testimonialsInView ? (
                     <iframe
                       title={title}
@@ -464,62 +466,112 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── ADMISSION ────────────────────────────────────────── */}
-      <section id="admission" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-12" data-aos="fade-up">
-            <span className="text-[#FF6B35] font-bold text-sm uppercase tracking-widest">Admissions 2026–27</span>
-            <h2 className="text-3xl md:text-4xl font-black text-[#7C3AED] mt-2 section-line center" style={{ fontFamily: 'var(--font-playfair-display), serif' }}>
-              Simple Admission Process
-            </h2>
-          </div>
-          <div className="grid lg:grid-cols-3 gap-10 items-start">
-            {/* Steps */}
-            <div className="lg:col-span-2">
-              <div className="grid sm:grid-cols-2 gap-5 mb-8">
-                {admissionSteps.map(({ step, title, desc, icon }) => (
-                  <div key={step} className="flex gap-4 bg-[#F3E8FF] rounded-2xl p-5 border border-purple-100 card-hover" data-aos="fade-up">
-                    <div className="step-circle bg-[#8B5CF6] text-white shrink-0">{step}</div>
-                    <div>
-                      <i className={`${icon} text-[#FF6B35] mb-1 text-sm`} />
-                      <h3 className="font-bold text-gray-800 text-sm mb-1">{title}</h3>
-                      <p className="text-xs text-gray-500 leading-relaxed">{desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              {/* Admission image */}
-              <div className="flex justify-center">
-                <div className="rounded-2xl overflow-hidden shadow-lg max-w-xs w-full">
-                  <Image src="/latestimage/admission_rules_modern_global_school_dalmiyanagar_dehri.jpeg"
-                    alt="Admission Rules" width={400} height={600} className="w-full h-auto object-contain" />
-                </div>
-              </div>
-            </div>
+      <section id="admission" className="py-12 bg-white">
+  <div className="max-w-6xl mx-auto px-4">
 
-            {/* Docs + CTA */}
-            <div data-aos="fade-left">
-              <div className="bg-gradient-to-b from-[#FFF4ED] to-white rounded-3xl p-6 border border-orange-200 shadow-sm mb-5">
-                <h3 className="font-bold text-[#7C3AED] text-base mb-4 flex items-center gap-2">
-                  <i className="fas fa-folder-open text-[#FF6B35]" /> Documents Required
-                </h3>
-                <ul className="space-y-2">
-                  {docs.map((d) => (
-                    <li key={d} className="flex items-center gap-2 text-sm text-gray-600">
-                      <i className="fas fa-check-circle text-[#10B981] text-xs" />{d}
-                    </li>
-                  ))}
-                </ul>
+    {/* Heading */}
+    <div className="text-center mb-8" data-aos="fade-up">
+      <span className="text-[#FF6B35] font-bold text-xs uppercase tracking-widest">
+        Admissions 2026–27
+      </span>
+
+      <h2
+        className="text-2xl md:text-4xl font-black text-[#7C3AED] mt-1"
+        style={{ fontFamily: 'var(--font-playfair-display), serif' }}
+      >
+        Simple Admission Process
+      </h2>
+    </div>
+
+    <div className="grid lg:grid-cols-3 gap-6 items-start">
+
+      {/* Left Side */}
+      <div className="lg:col-span-2">
+
+        {/* Steps */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-5">
+
+          {admissionSteps.map(({ step, title, desc, icon }) => (
+            <div
+              key={step}
+              className="flex gap-3 bg-[#F8F5FF] rounded-xl p-3 border border-purple-100"
+            >
+              <div className="w-8 h-8 rounded-full bg-[#8B5CF6] text-white flex items-center justify-center text-sm font-bold shrink-0">
+                {step}
               </div>
-              <button onClick={() => setEnquiryOpen(true)}
-                className="flex items-center justify-center gap-2 bg-[#FF6B35] hover:bg-[#FF8E53] text-white font-bold py-4 px-6 rounded-2xl transition-colors shadow-lg text-sm w-full">
-                <i className="fas fa-paper-plane" /> Submit Admission Enquiry
-              </button>
-              <p className="text-xs text-gray-400 text-center mt-3">Playgroup to Class VIII • CBSE Curriculum • Rohtas, Bihar</p>
+
+              <div>
+                <i className={`${icon} text-[#FF6B35] text-xs`} />
+
+                <h3 className="font-semibold text-gray-800 text-sm leading-tight">
+                  {title}
+                </h3>
+
+                <p className="text-[11px] text-gray-500 leading-snug mt-1">
+                  {desc}
+                </p>
+              </div>
             </div>
+          ))}
+
+        </div>
+
+        {/* Smaller Admission Image */}
+        <div className="flex justify-center">
+          <div className="rounded-xl overflow-hidden shadow-md max-w-[220px] w-full">
+            <Image
+              src="/latestimage/admission_rules_modern_global_school_dalmiyanagar_dehri.jpeg"
+              alt="Admission Rules"
+              width={300}
+              height={450}
+              className="w-full h-auto object-contain"
+            />
           </div>
         </div>
-      </section>
+
+      </div>
+
+      {/* Right Side */}
+      <div data-aos="fade-left">
+
+        {/* Documents */}
+        <div className="bg-[#FFF8F3] rounded-2xl p-4 border border-orange-100 shadow-sm mb-4">
+
+          <h3 className="font-bold text-[#7C3AED] text-sm mb-3 flex items-center gap-2">
+            <i className="fas fa-folder-open text-[#FF6B35]" />
+            Documents Required
+          </h3>
+
+          <ul className="space-y-1.5">
+            {docs.map((d) => (
+              <li
+                key={d}
+                className="flex items-start gap-2 text-xs text-gray-600"
+              >
+                <i className="fas fa-check-circle text-[#10B981] mt-1 text-[10px]" />
+                <span>{d}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* CTA */}
+        <button
+          onClick={() => setEnquiryOpen(true)}
+          className="flex items-center justify-center gap-2 bg-[#FF6B35] hover:bg-[#FF8E53] text-white font-semibold py-3 px-4 rounded-xl transition-colors shadow-md text-sm w-full"
+        >
+          <i className="fas fa-paper-plane" />
+          Submit Admission Enquiry
+        </button>
+
+        <p className="text-[11px] text-gray-400 text-center mt-2">
+          Playgroup to Class VIII • CBSE Curriculum
+        </p>
+
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* ── FACILITIES PREVIEW ──────────────────────────────── */}
       <section id="facilities" className="py-20 bg-gradient-to-br from-[#F1F5F9] to-[#E2E8F0]">
@@ -593,7 +645,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── GALLERY PREVIEW ─────────────────────────────────── */}
+      {/* ── GALLERY PREVIEW ─────────────────────────────────── 
       <section id="gallery" className="py-20 bg-gradient-to-br from-[#1E1B4B] to-[#312E81]">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-12 gap-4" data-aos="fade-up">
@@ -615,49 +667,8 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section>*/}
 
-      {/* ── SCHOOL TIMING + DRESSCODE ───────────────────────── */}
-      <section className="py-20 bg-gradient-to-br from-[#FAF5FF] to-[#F3E8FF]">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-12" data-aos="fade-up">
-            <span className="text-[#A855F7] font-bold text-sm uppercase tracking-widest">School Schedule</span>
-            <h2 className="text-3xl font-black text-[#7C3AED] mt-2 section-line center" style={{ fontFamily: 'var(--font-playfair-display), serif' }}>
-              Timings & Dress Code
-            </h2>
-          </div>
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Timing */}
-            <div className="bg-white rounded-3xl p-7 shadow-sm border border-gray-100" data-aos="fade-right">
-              <h3 className="font-bold text-[#7C3AED] text-lg mb-5 flex items-center gap-2">
-                <i className="fas fa-clock text-[#06B6D4]" /> School Timings
-              </h3>
-              <div className="space-y-3">
-                {timingData.map(({ label, time }) => (
-                  <div key={label} className="flex justify-between items-center py-2.5 border-b border-gray-50 last:border-0">
-                    <span className="text-sm font-medium text-gray-700">{label}</span>
-                    <span className="text-sm font-bold text-[#8B5CF6] bg-[#F3E8FF] px-3 py-1 rounded-full">{time}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            {/* Dress Code */}
-            <div className="bg-white rounded-3xl p-7 shadow-sm border border-gray-100" data-aos="fade-left">
-              <h3 className="font-bold text-[#7C3AED] text-lg mb-5 flex items-center gap-2">
-                <i className="fas fa-tshirt text-[#FF6B35]" /> Dress Code
-              </h3>
-              <div className="space-y-4">
-                {dresscodeData.map(({ label, text }) => (
-                  <div key={label} className="flex gap-4 items-start">
-                    <span className="shrink-0 bg-[#FFF4ED] text-[#FF6B35] font-bold text-xs px-3 py-1.5 rounded-full border border-orange-200">{label}</span>
-                    <p className="text-sm text-gray-600 leading-relaxed">{text}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* ── CONTACT ──────────────────────────────────────────── */}
       <section id="contact" className="py-20 bg-white">
